@@ -23,15 +23,15 @@ if  I~=length(File)
     plot(X*[1,1],(57.5-I*6)*[1,0.98]+45  ,'k-','linewidth',1.5)      ; hold on ;
     [p,h,stats]=ranksum(R,RRR,'alpha',0.01,'tail','right')           ;
 if  h==1
-    plot([0,1.6,3.2]-1.6+(XXX+27+X)/2,([57.5]-I*6+47.5)*ones(1,3),'k*','linewidth',1,'markersize',6.5) ; hold on ;
+    plot([0,1.6,3.2]-1.6+(XXX+27+X)/2,([57.5]-I*6+47.5)*ones(1,3),'k*','linewidth',1,'markersize',5) ; hold on ;
 else if h==0
     [p,h,stats]=ranksum(R,RRR,'alpha',0.05,'tail','right')           ;
 if  h==1
-    plot([0,1.6]-0.8+(XXX+27+X)/2,([57.5]-I*6+47.5)*ones(1,2)   ,'k*','linewidth',1,'markersize',6.5) ; hold on ;
+    plot([0,1.6]-0.8+(XXX+27+X)/2,([57.5]-I*6+47.5)*ones(1,2)    ,'k*','linewidth',1,'markersize',5) ; hold on ;
 else if h==0
     [p,h,stats]=ranksum(R,RRR,'alpha',0.10,'tail','right')           ;
 if  h==1
-    plot(0+(XXX+27+X)/2,([57.5]-I*6+47.5)*ones(1,1)             ,'k*','linewidth',1,'markersize',6.5) ; hold on ;
+    plot(0+(XXX+27+X)/2,([57.5]-I*6+47.5)*ones(1,1)              ,'k*','linewidth',1,'markersize',5) ; hold on ;
 end
 end
 end
@@ -45,4 +45,4 @@ end
     y=ylabel('Hausdorff distance (\mum)')       ; set(y,'Fontname','Arial','Fontsize',18) ;
     set(gca,'xtick',36.5*[1,2,3]-14,'FontSize',18,'Fontname','Arial')       ; clear x     ;
     set(gca,'ytick',[0,20,40,60,80,100],'FontSize',18,'Fontname','Arial')   ; clear y     ;
-    set(gca,'XTickLabel',Xaxis) ; set(gca,'FontSize',18,'Fontname','Arial') ; axis([0,120,-15,105]) ;
+    set(gca,'XTickLabel',Xaxis) ; set(gca,'FontSize',18,'Fontname','Arial') ; axis([0,120,-15,105])  ;

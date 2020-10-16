@@ -1,7 +1,7 @@
-  % Mission 1 : Data Analysis of Figure 3b
+  % Figure 1ABCDEF : Structure
     
     load('E:\Project 12 - Wnt & Membrane\CJF\Paper Revision - PLUSPLUS\Revision20200331 - Volume&Surface_PLUS\WorkSpace_CellVolume')       ;
-    load('E:\Project 12 - Wnt & Membrane\CJF\Paper Revision - PLUSPLUS\Revision20200319 - DataImport\WorkSpace_EMBRYO') ; c=hsv(8)         ;
+    load('E:\Project 12 - Wnt & Membrane\CJF\Paper Revision - PLUSPLUS\Revision20200319 - DataImport\WorkSpace_EMBRYO') ; c=hsv(12)        ;
     load('E:\Project 12 - Wnt & Membrane\CJF\Paper Revision - PLUSPLUS\Revision20200319 - DataImport\WorkSpace_HLH1'  ) ; C=zeros(size(c)) ;
     load('E:\Project 12 - Wnt & Membrane\CJF\Paper Revision - PLUSPLUS\Revision20200424 - QueryUpdate\WorkSpace_Query') ;
     load('E:\Project 1 - C.elegans Resource\11-Patch\Problem 1 - WT Cycle\WorkSpace_CellName') ;
@@ -10,7 +10,7 @@ for k2=1:size(C,2)
     C(k1,k2)=c(size(C,1)+1-k1,k2) ;
 end
 end
-for n=2
+for n=8
     Parameter=[] ; CELLNAME={}    ;
     load(['E:\Project 12 - Wnt & Membrane\CJF\Paper Revision - PLUSPLUS\Revision20200319 - DataImport\Normalization5\WorkSpace_Criteria'  ,num2str(n)]) ;
     load(['E:\Project 12 - Wnt & Membrane\CJF\Paper Revision - PLUSPLUS\Revision20200319 - DataImport\Normalization5\WorkSpace_Eggshell0_',num2str(n)]) ;
@@ -42,7 +42,7 @@ end
 
     figure('Position',[0 0 800 450])                      ;
 for j=1:length(CELLNAME)
-    plot3(-25,-25,-25,'.','markersize',45,'color',C(j,:)) ; hold on      ;
+    plot3(-25,-25,-25,'.','markersize',45,'color',C(j,:)) ; hold on ;
 end
     h=findobj(gca) ;
     legend(h(end:-1:end-length(CELLNAME)+1),CELLNAME','Location','eastoutside','FontSize',17.5,'FontName','arial') ;
@@ -60,9 +60,9 @@ for N=1:size(EMBRYO,1)+length(HLH1)
     end
 end
 end
-    axis([-25,25,-8,8,-10,10]) ;
-    set(gca,'FontSize',20,'Fontname','arial')  ; h=findobj(gca) ; view(-40,20)   ;
-    set(gcf,'position',[0,0,800,450]) ; set(gcf, 'PaperPositionMode', 'manual')  ; 
+    axis([-25,25,-8,8,-15,15]) ;
+    set(gca,'FontSize',20,'Fontname','arial')  ; h=findobj(gca) ; view(-42.5,15) ;
+    set(gcf,'position',[0,0,800,450]) ; set(gcf, 'PaperPositionMode', 'manual')  ;
     set(gcf,'PaperUnits','points')    ; set(gcf, 'PaperPosition', [0,0,800,450]) ;
-    print(gcf,'-r600','-dpng',['Scatter.png']) ; clf            ;
+  % print(gcf,'-r600','-dpng',['Scatter.png']) ; clf            ;
 end
